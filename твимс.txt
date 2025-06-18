@@ -1,0 +1,520 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}
+\usepackage{mathtools}
+\graphicspath{ {./images/}}
+
+\begin{document}
+\begin{center}
+	 {\Large Вариант 1}
+\end{center}
+
+\noindent{} Подобрать порядок многочлена $\hat{m}$ $\geq $ 1 в модели (1), используя критерий Фишера на уровне значимости 0.05, и вычислить оценки неизвестных параметров  $(\theta_0, . . . , \theta_\hat{m} )$ методом наименьших квадратов.\\\\
+Основная и альтернативная гипотеза этого критерия имеют вид:
+$$
+H_0:\theta_{m} = 0; \;\;\; H_A:\theta_m \neq 0 \;,
+$$
+\\
+Статистика критерия имеет вид:
+$$
+Z = \frac{\hat\theta_{p}^2}{\frac{\alpha_{p+1}}{n-(p+1)}(Y-X\hat\Theta)^T(Y-X\hat\Theta)} \;,
+$$
+где n --- объём выборки,$Y_{n\times1}$ --- выборка, $\hat\Theta$ --- матрица МНК-оценок параметров $\theta$, $\alpha_{p+1}$ --- p+1-ый элемент главной диагонали $(X^T X)^{-1}$.
+$$
+\\
+$$
+
+ $Y = 
+ \begin{pmatrix}
+    -104,6790756   \\
+    -93,35448202  \\
+    \vdots \\
+    -67,5979395  \\
+ \end{pmatrix}$
+\section{Номер}
+\subsection{(Порядок) p=1:  $\theta_0 + x\theta_1 = y$}
+$X_{40x2} = 
+ \begin{pmatrix}
+    1 & -3,8  \\
+    1 & -3,6  \\
+    \vdots  & \vdots \\
+    1 & 4  
+ \end{pmatrix}$\\\\\\
+$(X^T X)^{-1}_{2x2} =
+\begin{pmatrix}
+    0.0250469 & -0.00046904 \\
+   -0.00046904 & 0.00469043 \\
+\end{pmatrix}$\\\\\\
+$\widehat{\theta}_{2x1}=(X^T X)^{-1} X^T Y \approx
+\begin{pmatrix}
+    -26.16117729 \\
+    4.4138423 \\
+\end{pmatrix}$\\\\
+$(Y-X\widehat{\theta})^T (Y-X\widehat{\theta}) \approx 32970.08988576105$  \\\\
+$T_1 \approx 4.787229973728436$\\\\
+Уровень надежности 0,95.Тогда квантиль $f_{0.95,1.38} \approx 4.098$.Поскольку,\\
+$T_1$ > $f$ статистика попала в критическую область.
+\subsection{(Порядок) p=2:  $\theta_0 + x\theta_1 + x^2\theta_2 = y$}
+$X_{40x3} = 
+ \begin{pmatrix}
+    1 & -3,8 & 14,44 \\
+    1 & -3,6 & 12,96 \\
+    \vdots  & \vdots & \vdots \\
+    1 & 4  & 16 \\
+ \end{pmatrix}$\\\\\\
+$(X^T X)^{-1}_{3x3} =
+\begin{pmatrix}
+    0.05623827 & 0.00070356 & -0.00586304 \\
+    0.00070356 & 0.00473451 &-0.00022042 \\
+    -0.00586304 & -0.00022042 & 0.00110208 \\
+\end{pmatrix}$\\\\
+$\widehat{\theta}_{3x1}=(X^T X)^{-1} X^T Y \approx
+\begin{pmatrix}
+   5.88297961 \\
+   5.61850985 \\
+   -6.02333776  \\
+\end{pmatrix}$\\\\
+$(Y-X\widehat{\theta})^T (Y-X\widehat{\theta}) \approx 49.83006607275816$  \\\\
+$T_2 \approx 24444.06980215441$\\\\
+Квантиль $f_{0.95,1.37} \approx 4.1055$. Поскольку, $T_2$ > $f$ статистика попала в критическую область.
+\subsection{(Порядок) p=3:  $\theta_0 + x\theta_1 + x^2\theta_2 +x^3\theta_3= y$}
+$X_{40x4} = 
+\begin{pmatrix}
+    1 & -3,8 & 14,44 & -54.872 \\
+    1 & -3,6 & 12,96 & -46.656\\
+    \vdots  & \vdots & \vdots & \vdots\\
+    1 & 4  & 16 & 64 \\
+\end{pmatrix}$\\\\
+$(X^T X)^{-1}_{4x4} =
+\begin{pmatrix}
+   0.0564852955 & -0.00176149141 &-0.0059404271 & 0.000257958993 \\
+-0.00176149141 & 0.0293335919 & 0.00055184568 & -0.00257420232 \\ 
+-0.0059404271 & 0.00055184568 & 0.00112631934 & -0.0000808142209 \\
+0.000257958993 & -0.00257420232 & -0.0000808142209 & 0.000269380736 \\
+\end{pmatrix}$\\\\
+$\widehat{\theta}_{4x1}=(X^T X)^{-1} X^T Y \approx
+\begin{pmatrix}
+    5.95313974 \\
+    4.91837394 \\
+    -6.04531775 \\
+    0.07326663 \\
+\end{pmatrix}$\\\\
+$(Y-X\widehat{\theta})^T (Y-X\widehat{\theta}) \approx 29.902884019787432$  \\\\
+$T_3 \approx 23.99027978144974$ \\\\
+Квантиль $f_{0.95,1.36} \approx 4.113189609999999$.Поскольку,$T_3$ > $f$ статистика попала в критическую область.\\
+\subsection{(Порядок) p=4:  $\theta_0 + x\theta_1 + x^2\theta_2 +x^3\theta_3 + x^4\theta_4= y$}
+$X_{40x5} = 
+\begin{pmatrix}
+    1 & -3,8 & 14,44 & -54.872 & 208.5136\\
+    1 & -3,6 & 12,96 & -46.656 & 167.9616\\
+    \vdots  & \vdots & \vdots & \vdots\\
+    1 & 4  & 16 & 64 & 256 \\\\
+\end{pmatrix}$\\\\
+$(X^T X)^{-1}_{5x5} =
+\begin{pmatrix}
+0.0879 & 0.0022&  -0.0257 & -0.00032& 0.00145\\
+0.0022& 0.0298& -0.0019& -0.00265& 0.00019\\
+-0.0257& -0.00194& 0.0135& 0.00028& -0.00091\\
+-0.00032& -0.00265& 0.000284& 0.00028& -0.0000268\\
+0.00145& 0.000183& -0.00091& -0.000027 & 0.000067\\
+\end{pmatrix}$\\\\
+$\widehat{\theta}_{5x1}=(X^T X)^{-1} X^T Y \approx
+\begin{pmatrix}
+    5.6446837 \\
+    4.87949255 \\
+    -5.85148016 \\
+    0.07896056 \\
+    -0.01423482 \\
+\end{pmatrix}$\\\\
+$(Y-X\widehat{\theta})^T (Y-X\widehat{\theta}) \approx 26.87686198131495$  \\\\
+$T_4 \approx 3.940592894369303$ \\\\
+Квантиль $f_{0.95,1.36} \approx 4.12131$.Поскольку,$T_4$ < $f$ статистика попала в доверительную область область. Получается порядок модели равен 3\\
+Вывод программы:\\\\
+\begin{center}
+	\includegraphics{image (23).png}
+\end{center}
+
+\section{Номер }
+
+\noindent{} В предположении нормальности ошибок построить доверительные интервалы уровней надёжности  $\alpha_1$ = 0.95 и $\alpha_2$ = 0.99 для параметров $(\theta_0, . . . , \theta_\hat{m} )$.
+\\
+
+$\hat\theta_k-t_{1-\frac{\alpha}{2}, n-(p+1)}\frac{||\hat E||\sqrt{\alpha_k}}{\sqrt{n-(p+1)}}$  $\leq$  $\theta_k$ $\leq$ $\hat\theta_k+t_{1-\frac{\alpha}{2}, n-(p+1)}\frac{||\hat E||\sqrt{\alpha_k}}{\sqrt{n-(p+1)}},$
+\\\\
+где $\alpha_k$ --- k-й элемент главной диагонали матрицы  $(X^T X)^{-1}$, а $\alpha$ --- уровень значимости.\\\\
+Следовательно, для уровня надёжности = 0.99: \\\\
+5.36407965  $\leq \theta_0 \leq$ 6.54219983 \\\\
+4.49387705 $\leq \theta_1 \leq$ 5.34287084\\\\
+-6.12849847 $\leq \theta_2 \leq$ -5.96213703 \\\\
+0.03258717 $\leq \theta_3 \leq$ 0.11394609 \\\\
+Результат программы:\\
+\begin{center}
+	\includegraphics{image (24).png}
+\end{center}
+Следовательно, для уровня надёжности = 0.95: \\\\
+5.51383987  $\leq \theta_0 \leq$ 6.3924396  \\\\
+4.6017994 $\leq \theta_1 \leq$ 5.23494849 \\\\
+-6.10735095$\leq \theta_2 \leq$ -5.98328456 \\\\
+0.04292935 $\leq \theta_3 \leq$ 0.10360391 \\\\
+
+Результат программы:\\
+\begin{center}
+	\includegraphics{image (36).png}
+\end{center}
+
+\section{Номер}
+\noindent{}В предположении нормальности ошибок построить доверительные интервалы уровней надёжности $\alpha_1$ = 0.95 и $\alpha_2$ = 0.99 для полезного сигнала $\varphi(x, \theta) = \theta_0 + \theta_1x + \ldots + \theta_{\hat m}x^{\hat m}$.
+
+$$
+\varphi(x, \hat\theta)-t_{1-\frac{\alpha}{2}, n-(p+1)}\frac{||\hat E||\sqrt{\alpha(x)}}{\sqrt{n-(p+1)}}  \leq \varphi(x, \theta) \leq \varphi(x, \hat\theta)+t_{1-\frac{\alpha}{2}, n-(p+1)}\frac{||\hat E||\sqrt{\alpha(x)}}{\sqrt{n-(p+1)}},
+$$
+
+где $\alpha(x) = (1, x, \ldots, x^{\hat m})(X^TX)^{-1}(1, x, \ldots, x^{\hat m})^T$ 
+
+Для уровня надёжности = 0.99 при $\hat m = 2$:
+\begin{center}
+-105.48271691$\leq \phi(x_0,\theta) \leq$ -102.61999525 \\
+-94.70303321 $\leq \phi(x_1,\theta) \leq$ -92.33427158 \\
+                        ...  \\
+\end{center}
+
+Результат программы:\\\\
+\includegraphics[width=9cm, height=12cm]{image (39).png} \\\\
+
+Для уровня надёжности = 0.95 при m = 2:
+\begin{center}
+-105.1188136 $\leq \phi(x_0,\theta) \leq$-102.98389857 \\
+-94.40192108 $\leq \phi(x_1,\theta) \leq$ -92.6353837 \\
+                        ...  \\
+\end{center}
+
+Результат программы:\\\\
+\includegraphics[width=9cm, height=12cm]{image (38).png} \\
+
+\section{Номер }
+\noindent{}
+Все графики
+График доверительного интервала для 0.99: \\
+\includegraphics[width=9cm, height=9cm]{image (28).png} \\
+Увеличенная область на графике,поскольку все сливается:\\\\
+\includegraphics[width=9cm, height=9cm]{image (29).png} \\
+График доверительного интервала для 0.95: \\
+\includegraphics[width=9cm, height=9cm]{image (31).png} \\\\
+Увеличенная область на графике,поскольку все сливается:\\\\
+\includegraphics[width=9cm, height=9cm]{image (32).png} \\\\
+\includegraphics[width=9cm, height=9cm]{image (30).png}\\\\
+
+\section{Номер }
+\noindent{}По остаткам регрессии построить оценку плотности распределения случайной ошибки наблюдения в виде гистограммы.
+
+Общий её вид:
+
+\begin{equation}
+	\hat f_n (x) =  
+	\begin{cases}
+		\frac{n_k}{n(t_{k+1} - t_k)} &\text{ $x\in [t_k;\; t_{k+1})$}\\
+		0 &\text{$x \in [t_0;\; t_1) \cup [t_l;\;t_{l+1})$}
+	\end{cases}
+\end{equation} 
+
+\begin{center}
+	Разделим на $l$ = 5 кусочков. Тогда:
+\end{center}
+\begin{equation}
+	\hat f_n (x) =  
+	\begin{cases}
+		\;\;\;\;0 &\text{$x \in (-\infty;\; -1.990)$}\\
+		\frac{3}{40\cdot0.75} &\text{ $x\in [-1.990;\;-1.240)$}\\
+		\frac{9}{40\cdot0.75} &\text{ $x\in [-1.240;\; -0.490)$}\\
+		\frac{15}{40\cdot0.75} &\text{ $x\in [-0.490;\;0.260)$}\\
+		\frac{8}{40\cdot0.75} &\text{ $x\in [0.260;\; 1.010)$}\\
+		\frac{5}{40\cdot0.75} &\text{ $x\in [1.010;\; 1.760)$}\\
+		\;\;\;\;0 &\text{$x \in (1.760;\; \infty)$}
+	\end{cases}
+\end{equation}
+
+\begin{center}
+	\includegraphics[width=120mm,height=105mm]{image (34).png}
+\end{center}
+
+\section{Номер }
+\noindent{} В предположении нормальности ошибок вычислить оценку максимального правдоподобия дисперсии $\sigma^2$ случайной ошибки.
+$$
+\hat\sigma^2 = \frac{||\hat E||^2}{n} = \frac{29.902884019787432}{40}= 
+0.7475721004946858
+$$
+\section{Номер }
+\noindent{}По остаткам регрессии с помощью $\chi^2$ – критерий Пирсона проверить
+гипотезу о том, что закон распределения ошибки наблюдения является нормальным
+$$
+H_0: E\sim\mathcal{N}(0,\theta);\;\;\;\; H_A: E\not\sim\mathcal{N}(0,\theta)
+$$
+$$
+L =  \prod\limits_{k = 1}^{40}\frac{1}{\sqrt{2\pi\theta}}\cdot exp\left\{-\frac{x_i^2}{2\theta}\right\} 
+= (2\pi\theta)^{-20}\cdot exp\left\{-\frac{1}{2\theta }\displaystyle\sum_{k=1}^{40}x_i^2\right\}
+$$
+
+$$
+\bar L = -20\cdot ln(2\pi\theta) +\frac{1}{2\theta }\displaystyle\sum_{k=1}^{40}x_i^2
+$$
+
+$$
+\frac{\partial \bar L}{\partial \theta} = -40\theta + \displaystyle\sum_{k=1}^{40}x_i^2 = 0
+$$
+
+
+$$
+\theta = \frac{1}{40}\displaystyle\sum_{k=1}^{40}x_i^2 = \frac{1}{40}||\hat E||^2 = \frac{29.902884019787432}{40}= 
+0.7475721004946858
+$$
+
+\noindent{}Статистика $T(Z_n)$ считается по формуле:
+$$
+T(Z_n) = n\displaystyle\sum_{k=0}^{l}\frac{(p_k-\hat p_k)^2}{p_k}\;\;,
+$$
+где $p_k = \Phi_0$$\left(\frac{t_{k+1}-m}{\sqrt\theta}\right) - \Phi_0$$\left(\frac{t_k-m}{\sqrt\theta}\right)$, а $\hat p_k = \frac{n_k}{n}$.\\
+\\
+\noindent{} В нашем случае $T(Z_n) = 2.3841901253429842$.
+Квантиль $\chi_{0,95}^2(5) \approx  11.0705$
+
+$$
+0 < T(Z_n) = 2.3841901253429842 < \chi_{0,95}^2(5) \approx   11.0705
+$$
+
+\noindent Статистика попала в доверительный интервал. Следовательно, гипотеза $H_0$ --- принимается, и закон распределения ошибок-нормальное.
+\begin{center}
+	\includegraphics[width=78mm,height=10mm]{image (11).png}
+\end{center}
+
+
+\newpage
+\begin{center}
+	 {\Large Вариант 2}
+\end{center}
+
+\noindent{} Подобрать порядок многочлена $\hat{m}$ $\geq $ 1 в модели (1), используя критерий Фишера на уровне значимости 0.05, и вычислить оценки неизвестных параметров  $(\theta_0, . . . , \theta_\hat{m} )$ методом наименьших квадратов.\\\\
+Основная и альтернативная гипотеза этого критерия имеют вид:
+$$
+H_0:\theta_{m} = 0; \;\;\; H_A:\theta_m \neq 0 \;,
+$$
+%где $B_{q\times(p+1)}$ --- матрица, $\Theta_{(p+1)\times1}$ --- матрица параметров модели (1), $C_{q\times1}$ --- константный вектор. При проверке порядка $\hat m$ модели (1): $B_{1\times(p+1)}=(0, \ldots ,1), C_{q\times1}=0$, так как требуется проверить равенство нулю последнего параметра, чтобы оценить порядок. \\
+\\
+Статистика критерия имеет вид:
+$$
+Z = \frac{\hat\theta_{p}^2}{\frac{\alpha_{p+1}}{n-(p+1)}(Y-X\hat\Theta)^T(Y-X\hat\Theta)} \;,
+$$
+где n --- объём выборки,$Y_{n\times1}$ --- выборка, $\hat\Theta$ --- матрица МНК-оценок параметров $\theta$, $\alpha_{p+1}$ --- p+1-ый элемент главной диагонали $(X^T X)^{-1}$.
+$$
+\\
+$$
+
+ $Y = 
+ \begin{pmatrix}
+    -101.28515603 \\
+    -92.30107622 \\
+    \vdots \\
+    -71.50642578 \\
+ \end{pmatrix}$
+\section{Номер}
+\subsection{(Порядок) p=2:  $\theta_0 + x\theta_1 + x^2\theta_2 = y$}
+$X_{40x3} = 
+ \begin{pmatrix}
+    1 & -3,8 & 14,44 \\
+    1 & -3,6 & 12,96 \\
+    \vdots  & \vdots & \vdots \\
+    1 & 4  & 16 \\
+ \end{pmatrix}$\\\\\\
+$(X^T X)^{-1}_{3x3} =
+\begin{pmatrix}
+    0.05623827 & 0.00070356  & -0.00586304 \\
+    0.00070356 & 0.00473451 & -0.00022042 \\
+    -0.00586304 & -0.00022042 & 0.00110208 \\
+\end{pmatrix}$\\\\
+$\widehat{\theta}_{3x1}=(X^T X)^{-1} X^T Y \approx
+\begin{pmatrix}
+   5.85740259 \\
+   5.14822395 \\
+   -6.06667728 \\
+\end{pmatrix}$\\\\
+$(Y-X\widehat{\theta})^T (Y-X\widehat{\theta}) \approx 58.912664563615984$  \\\\
+$T_2 \approx 20974.11589400782$\\\\
+Квантиль $f_{0.95,1.37} \approx 4.1055$. Поскольку, $T_2$ > $f$ статистика попала в критическую область.
+
+\subsection{(Порядок) p=3:  $\theta_0 + x\theta_1 + x^2\theta_2 +x^3\theta_3= y$}
+$X_{40x4} = 
+\begin{pmatrix}
+    1 & -3,8 & 14,44 & -54.872 \\
+    1 & -3,6 & 12,96 & -46.656\\
+    \vdots  & \vdots & \vdots & \vdots\\
+    1 & 4  & 16 & 64 \\
+\end{pmatrix}$\\\\
+$(X^T X)^{-1}_{4x4} =
+\begin{pmatrix}
+    0.0564852955 & -0.00176149141 & -0.0059404271 & 0.000257958993 \\
+   -0.00176149141 & 0.0293335919 & 0.00055184568 & -0.00257420232 \\
+   -0.0059404271 & 0.00055184568 & 0.00112631934 & -0.0000808142209 \\
+    0.000257958993 &-0.00257420232 & -0.0000808142209 &0.000269380736 \\
+\end{pmatrix}$\\\\
+$\widehat{\theta}_{4x1}=(X^T X)^{-1} X^T Y \approx
+\begin{pmatrix}
+   5.87614817 \\
+   4.96115964 \\
+   -6.07254995 \\ 
+   0.01957559 \\
+\end{pmatrix}$\\\\
+$(Y-X\widehat{\theta})^T (Y-X\widehat{\theta}) \approx 57.490129301858325$  \\\\
+$T_3 \approx 0.8907836883508456$ \\\\
+Квантиль $f_{0.95,1.36} \approx 4.113189609999999$.Поскольку,$T_3$ < $f$ статистика попала в доверительную область. Отсюда получаем ,что порядок равен 2.\\
+Вывод программы:\\\\
+\begin{center}
+	\includegraphics{image (1).png}
+\end{center}
+\section{Номер }
+\noindent{} В предположении нормальности ошибок построить доверительные интервалы уровней надёжности  $\alpha_1$ = 0.95 и $\alpha_2$ = 0.99 для параметров $(\theta_0, . . . , \theta_\hat{m} )$ 
+
+$$
+\hat\theta_k-t_{1-\frac{\alpha}{2}, n-(p+1)}\frac{||\hat E||\sqrt{\alpha_k}}{\sqrt{n-(p+1)}}  \leq \theta_k \leq \hat\theta_k+t_{1-\frac{\alpha}{2}, n-(p+1)}\frac{||\hat E||\sqrt{\alpha_k}}{\sqrt{n-(p+1)}},
+$$
+
+где $\alpha_k$ --- k-й элемент главной диагонали матрицы  $(X^T X)^{-1}$, а $\alpha$ --- уровень значимости.\\\\
+Следовательно, для уровня надёжности = 0.99: \\\\
+5.04484403  $\leq \theta_0 \leq$ 6.66996115\\\\
+4.91246054  $\leq \theta_1 \leq$ 5.38398736\\\\
+-6.18042541 $\leq \theta_2 \leq$ -5.95292915 \\\\
+Результат программы:\\
+\begin{center}
+	\includegraphics{image (12).png}
+\end{center}
+Следовательно, для уровня надёжности = 0.95: \\\\
+5.25108501  $\leq \theta_0 \leq$  6.46372017 \\\\
+4.97230124  $\leq \theta_1 \leq$ 5.32414665 \\\\
+-6.15155422$\leq \theta_2 \leq$ -5.98180033\\\\
+Результат программы:\\
+\begin{center}
+	\includegraphics{image (37).png}
+\end{center}
+
+\section{Номер}
+\noindent{}В предположении нормальности ошибок построить доверительные интервалы уровней надёжности $\alpha_1$ = 0.95 и $\alpha_2$ = 0.99 для полезного сигнала $\varphi(x, \theta) = \theta_0 + \theta_1x + \ldots + \theta_{\hat m}x^{\hat m}$.
+
+$$
+\varphi(x, \hat\theta)-t_{1-\frac{\alpha}{2}, n-(p+1)}\frac{||\hat E||\sqrt{\alpha(x)}}{\sqrt{n-(p+1)}}  \leq \varphi(x, \theta) \leq \varphi(x, \hat\theta)+t_{1-\frac{\alpha}{2}, n-(p+1)}\frac{||\hat E||\sqrt{\alpha(x)}}{\sqrt{n-(p+1)}},
+$$
+
+где $\alpha(x) = (1, x, \ldots, x^{\hat m})(X^TX)^{-1}(1, x, \ldots, x^{\hat m})^T$ 
+
+Для уровня надёжности = 0.99 при $\hat m = 2$:
+\begin{center}
+-101.687278 $\leq \phi(x_0,\theta) \leq$ -98.5927217 \\
+-91.6570138 $\leq \phi(x_1,\theta) \leq$ -88.8629862 \\
+                        ...  \\
+\end{center}
+
+Результат программы:\\\\
+\includegraphics[width=9cm, height=16cm]{image (14).png} \\\\
+
+Для уровня надёжности = 0.95 при m = 2:
+\begin{center}
+-101.29455315 $\leq \phi(x_0,\theta) \leq$ -98.98544685 \\
+-91.30242826 $\leq \phi(x_1,\theta) \leq$ -89.21757174 \\
+                        ...  \\
+\end{center}
+
+Результат программы:\\\\
+\includegraphics[width=9cm, height=16cm]{image (15).png} \\
+\section{Номер }
+\noindent{}
+Все графики
+График доверительного интервала для 0.99: \\
+\includegraphics[width=10cm, height=10cm]{image (16).png} \\
+Увеличенная область на графике,поскольку все сливается:\\\\
+\includegraphics[width=10cm, height=10cm]{image (17).png} \\
+График доверительного интервала для 0.95: \\
+\includegraphics[width=10cm, height=10cm]{image (19).png} \\\\
+Увеличенная область на графике,поскольку все сливается:\\\\
+\includegraphics[width=10cm, height=10cm]{image (20).png} \\\\
+\includegraphics[width=10cm, height=10cm]{image (18).png}\\\\
+
+\section{Номер }
+\noindent{}По остаткам регрессии построить оценку плотности распределения случайной ошибки наблюдения в виде гистограммы.
+
+Общий её вид:
+
+\begin{equation}
+	\hat f_n (x) =  
+	\begin{cases}
+		\frac{n_k}{n(t_{k+1} - t_k)} &\text{ $x\in [t_k;\; t_{k+1})$}\\
+		0 &\text{$x \in [t_0;\; t_1) \cup [t_l;\;t_{l+1})$}
+	\end{cases}
+\end{equation} 
+
+\begin{center}
+	Разделим на $l$ = 5 кусочков. Тогда:
+\end{center}
+\begin{equation}
+	\hat f_n (x) =  
+	\begin{cases}
+		\;\;\;\;0 &\text{$x \in (-\infty;\; -1.998)$}\\
+		\frac{8}{40\cdot0.812} &\text{ $x\in [-1.998;\;-1.186)$}\\
+		\frac{10}{40\cdot0.812} &\text{ $x\in [-1.186;\; -0.372)$}\\
+		\frac{6}{40\cdot0.812} &\text{ $x\in [-0.373;\; 0.439)$}\\
+		\frac{8}{40\cdot0.812} &\text{ $x\in [0.439;\;1.251)$}\\
+		\frac{8}{40\cdot0.812} &\text{ $x\in [1.251;\; 2.063)$}\\
+		\;\;\;\;0 &\text{$x \in (2.063;\; \infty)$}
+	\end{cases}
+\end{equation}
+
+\begin{center}
+	\includegraphics[width=120mm,height=105mm]{image (35).png}
+\end{center}
+
+\section{Номер }
+\noindent{} В предположении нормальности ошибок вычислить оценку максимального правдоподобия дисперсии $\sigma^2$ случайной ошибки.
+$$
+\hat\sigma^2 = \frac{||\hat E||^2}{n} = \frac{58.912664563615984}{40}= 
+1.4728166140903995
+$$
+\section{Номер }
+\noindent{}По остаткам регрессии с помощью $\chi^2$ – критерий Пирсона проверить
+гипотезу о том, что закон распределения ошибки наблюдения является нормальным
+$$
+H_0: E\sim\mathcal{N}(0,\theta);\;\;\;\; H_A: E\not\sim\mathcal{N}(0,\theta)
+$$
+$$
+L =  \prod\limits_{k = 1}^{40}\frac{1}{\sqrt{2\pi\theta}}\cdot exp\left\{-\frac{x_i^2}{2\theta}\right\} 
+= (2\pi\theta)^{-20}\cdot exp\left\{-\frac{1}{2\theta }\displaystyle\sum_{k=1}^{40}x_i^2\right\}
+$$
+
+$$
+\bar L = -20\cdot ln(2\pi\theta) +\frac{1}{2\theta }\displaystyle\sum_{k=1}^{40}x_i^2
+$$
+
+$$
+\frac{\partial \bar L}{\partial \theta} = -40\theta + \displaystyle\sum_{k=1}^{40}x_i^2 = 0
+$$
+
+
+$$
+\theta = \frac{1}{40}\displaystyle\sum_{k=1}^{40}x_i^2 = \frac{1}{40}||\hat E||^2 = \frac{58.912664563615984}{40}= 
+1.4728166140903995
+$$
+
+\noindent{}Статистика $T(Z_n)$ считается по формуле:
+$$
+T(Z_n) = n\displaystyle\sum_{k=0}^{l}\frac{(p_k-\hat p_k)^2}{p_k}\;\;,
+$$
+где $p_k = \Phi_0$$\left(\frac{t_{k+1}-m}{\sqrt\theta}\right) - \Phi_0$$\left(\frac{t_k-m}{\sqrt\theta}\right)$, а $\hat p_k = \frac{n_k}{n}$.\\
+\\
+\noindent{} В нашем случае $T(Z_n) =11.750988502506637$.
+Квантиль $\chi_{0,95}^2(5) \approx  11.0705$
+
+$$
+0 < \chi_{0,95}^2(5) \approx   11.0705 < T(Z_n) = 11.750988502506637
+$$
+
+\noindent Статистика не попала в доверительный интервал. Следовательно, гипотеза $H_0$ --- отвергается, и закон распределения ошибок не является нормальным с параметрами $(0,\theta)$.
+\begin{center}
+	\includegraphics[width=78mm,height=10mm]{image (22).png}
+\end{center}
+
+\end{document}
